@@ -52,16 +52,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				newsletter: {
+					'text-primary': 'hsl(var(--newsletter-text-primary))',
+					'text-secondary': 'hsl(var(--newsletter-text-secondary))',
+					'accent': 'hsl(var(--newsletter-accent))',
+					'surface': 'hsl(var(--newsletter-surface))',
+					'surface-elevated': 'hsl(var(--newsletter-surface-elevated))'
 				}
+			},
+			fontSize: {
+				'hero': 'var(--font-size-hero)',
+				'h1': 'var(--font-size-h1)',
+				'h2': 'var(--font-size-h2)',
+				'h3': 'var(--font-size-h3)',
+				'body': 'var(--font-size-body)',
+				'small': 'var(--font-size-small)'
+			},
+			spacing: {
+				'section': 'var(--space-section)',
+				'component': 'var(--space-component)',
+				'element': 'var(--space-element)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
