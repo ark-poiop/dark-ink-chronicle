@@ -8,57 +8,72 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark newsletter theme - 어두운 뉴스레터 테마 */
-    --background: 220 25% 8%;
-    --foreground: 0 0% 88%;
+    /* Sophisticated dark newsletter theme - 세련된 어두운 뉴스레터 테마 */
+    --background: 218 25% 6%;
+    --foreground: 0 0% 95%;
     
-    --card: 220 25% 10%;
-    --card-foreground: 0 0% 88%;
+    --card: 218 25% 8%;
+    --card-foreground: 0 0% 95%;
     
-    --popover: 220 25% 10%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 218 25% 8%;
+    --popover-foreground: 0 0% 95%;
     
-    /* Primary Blue - 신뢰감과 전문성 */
-    --primary: 207 89% 61%;
-    --primary-foreground: 220 25% 8%;
+    /* Enhanced Primary Blue - 개선된 프라이머리 블루 */
+    --primary: 210 100% 65%;
+    --primary-foreground: 218 25% 6%;
     
-    --secondary: 220 25% 12%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 218 25% 12%;
+    --secondary-foreground: 0 0% 95%;
     
-    --muted: 220 25% 12%;
-    --muted-foreground: 200 18% 73%;
+    --muted: 218 25% 10%;
+    --muted-foreground: 215 20% 70%;
     
-    --accent: 207 89% 61%;
-    --accent-foreground: 220 25% 8%;
+    --accent: 210 100% 65%;
+    --accent-foreground: 218 25% 6%;
     
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 88%;
+    --destructive-foreground: 0 0% 95%;
     
-    --border: 220 25% 15%;
-    --input: 220 25% 12%;
-    --ring: 207 89% 61%;
+    --border: 218 25% 15%;
+    --input: 218 25% 12%;
+    --ring: 210 100% 65%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Newsletter specific colors */
-    --newsletter-text-primary: 0 0% 88%;
-    --newsletter-text-secondary: 200 18% 73%;
-    --newsletter-accent: 207 89% 61%;
-    --newsletter-surface: 220 25% 10%;
-    --newsletter-surface-elevated: 220 25% 12%;
+    /* Newsletter specific colors - 향상된 색상 팔레트 */
+    --newsletter-text-primary: 0 0% 95%;
+    --newsletter-text-secondary: 215 20% 70%;
+    --newsletter-text-muted: 215 15% 55%;
+    --newsletter-accent: 210 100% 65%;
+    --newsletter-accent-soft: 210 80% 75%;
+    --newsletter-surface: 218 25% 8%;
+    --newsletter-surface-elevated: 218 25% 12%;
+    --newsletter-surface-hover: 218 25% 15%;
     
-    /* Typography scale */
-    --font-size-hero: 3rem;
-    --font-size-h1: 2.25rem;
-    --font-size-h2: 1.875rem;
+    /* Advanced gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 65%) 0%, hsl(220, 90%, 70%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(218, 25%, 8%) 0%, hsl(218, 25%, 12%) 100%);
+    --gradient-border: linear-gradient(135deg, hsl(210, 100%, 65%) 0%, hsl(220, 90%, 70%) 100%);
+    
+    /* Typography scale - 개선된 타이포그래피 */
+    --font-size-hero: 3.5rem;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
     --font-size-h3: 1.5rem;
     --font-size-body: 1rem;
     --font-size-small: 0.875rem;
+    --font-size-xs: 0.75rem;
     
-    /* Spacing system */
-    --space-section: 4rem;
-    --space-component: 2rem;
-    --space-element: 1rem;
+    /* Spacing system - 정교한 스페이싱 */
+    --space-section: 5rem;
+    --space-component: 3rem;
+    --space-element: 1.5rem;
+    
+    /* Shadows - 세련된 그림자 */
+    --shadow-sm: 0 2px 4px hsl(218, 25%, 3%, 0.1);
+    --shadow-md: 0 4px 12px hsl(218, 25%, 3%, 0.15);
+    --shadow-lg: 0 8px 25px hsl(218, 25%, 3%, 0.2);
+    --shadow-glow: 0 0 20px hsl(210, 100%, 65%, 0.15);
   }
 }
 
@@ -69,5 +84,36 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Enhanced post card hover animations */
+  .post-card-hover {
+    @apply transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg;
+  }
+  
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-surface {
+    background: var(--gradient-surface);
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-newsletter-accent to-newsletter-accent-soft bg-clip-text text-transparent;
+  }
+  
+  /* Category pill styling */
+  .category-pill {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-all duration-200;
+  }
+  
+  /* Enhanced shadows */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
   }
 }

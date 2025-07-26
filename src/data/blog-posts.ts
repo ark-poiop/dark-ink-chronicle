@@ -6,7 +6,18 @@ export interface BlogPost {
   date: string;
   author: string;
   readTime: string;
+  category: string;
+  tags: string[];
 }
+
+export const categories = [
+  { id: 'all', name: '전체', color: 'bg-newsletter-accent' },
+  { id: 'web-dev', name: '웹 개발', color: 'bg-emerald-500' },
+  { id: 'typescript', name: 'TypeScript', color: 'bg-blue-500' },
+  { id: 'performance', name: '성능 최적화', color: 'bg-purple-500' },
+  { id: 'react', name: 'React', color: 'bg-cyan-500' },
+  { id: 'trends', name: '트렌드', color: 'bg-orange-500' }
+] as const;
 
 export const blogPosts: BlogPost[] = [
   {
@@ -35,7 +46,9 @@ Vercel Edge Functions, Cloudflare Workers 등 엣지 컴퓨팅 솔루션들이 �
     `,
     date: "2024-01-15",
     author: "김개발",
-    readTime: "5분"
+    readTime: "5분",
+    category: "trends",
+    tags: ["웹개발", "트렌드", "2024", "서버컴포넌트", "AI"]
   },
   {
     id: "2", 
@@ -78,7 +91,9 @@ type Optional<T> = {
     `,
     date: "2024-01-10",
     author: "이타입",
-    readTime: "7분"
+    readTime: "7분",
+    category: "typescript",
+    tags: ["TypeScript", "고급패턴", "베스트프랙티스", "타입시스템"]
   },
   {
     id: "3",
@@ -123,6 +138,8 @@ const OptimizedComponent = React.memo(({ data }) => {
     `,
     date: "2024-01-05",
     author: "박성능",
-    readTime: "6분"
+    readTime: "6분",
+    category: "performance",
+    tags: ["React", "성능최적화", "렌더링", "메모이제이션"]
   }
 ];
