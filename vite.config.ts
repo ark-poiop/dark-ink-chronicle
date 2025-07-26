@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/dark-ink-chronicle/', //Github 저장소명으로 설정
   server: {
     host: "::",
     port: 8080,
